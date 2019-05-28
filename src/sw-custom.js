@@ -21,10 +21,12 @@
     console.log("sync event", event);
     if (event.tag === 'syncTag') {
       event.waitUntil(
-        fetch('http://localhost:3000/sync').then( function (response) {
+        fetch('http://localhost:3000/sync',{mode:'no-cors'}).then( function (response) {
           response.text().then(function (data) {
             console.log(data)
           })
+        }).catch(function (error) {
+          console.log(error)
         })
       )
     }

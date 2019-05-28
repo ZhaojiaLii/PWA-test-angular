@@ -93,7 +93,7 @@ router.get('/sync', async(ctx) => {
   }
   var requesttime = time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
   ctx.response.body = JSON.stringify(t);
-  console.log("you request weather API from PWA at: "+requesttime);
+  console.log("request from PWA at: "+requesttime);
 })
 
 app.use(cors({
